@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Main.css';
-import Form from './Form';
+import Form from './CVForm/Form';
 import Preview from './Preview';
 
 class Main extends React.Component
