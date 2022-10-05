@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Main.css';
 import Form from './CVForm/Form';
-import Preview from './Preview';
+import Preview from './CVPreview/Preview';
 
 class Main extends React.Component
 {

@@ -2,6 +2,9 @@
 {
   height: 90%;
   width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   background-image: linear-gradient(to top left, #282c349a, #282c349a, rgba(255, 255, 255, 0.5), #282c349a, #282c349a, #282c349a, #282c349a);
   color: white;
   border-radius: 25px;

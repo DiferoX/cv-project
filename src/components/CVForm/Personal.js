@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/CVForm/Personal.css';
 import { FaUser, FaMapMarkerAlt, FaPhoneAlt, FaLinkedin, FaGithub } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { MdEmail, MdAddAPhoto } from "react-icons/md";
 
 function Personal ()
 {
@@ -11,7 +11,7 @@ function Personal ()
       <form>
           <div>
             <div>
-              <FaUser className='IconFirstName' />
+              <FaUser className='iconFirstName' />
               <input 
                 type='text' 
                 name='inputFirstName' 
@@ -20,7 +20,7 @@ function Personal ()
               />
             </div>
             <div>
-              <FaUser className='IconFirstName' />
+              <FaUser className='iconFirstName' />
               <input 
                 type='text' 
                 name='inputLastName' 
@@ -30,7 +30,7 @@ function Personal ()
             </div>
           </div>
           <div>
-            <FaMapMarkerAlt className='IconAddress' />
+            <FaMapMarkerAlt className='iconAddress' />
             <input 
               type='text' 
               name='inputAddress' 
@@ -40,7 +40,16 @@ function Personal ()
           </div>
           <div>
             <div>
-              <FaPhoneAlt className='IconPhoneNumber' />
+              <MdAddAPhoto className='iconPhoto' />
+              <input
+                type='file' 
+                name='inputPhoto' 
+                id='inputPhoto' 
+                placeholder='Photo' 
+              />
+            </div>
+            <div>
+              <FaPhoneAlt className='iconPhoneNumber' />
               <input 
                 type='text' 
                 name='inputPhoneNumber' 
@@ -49,9 +58,9 @@ function Personal ()
               />
             </div>
             <div>
-              <MdEmail className='IconEmail' />
+              <MdEmail className='iconEmail' />
               <input 
-                type='text' 
+                type='email' 
                 name='inputEmail' 
                 id='inputEmail' 
                 placeholder='Email' 
@@ -60,7 +69,7 @@ function Personal ()
           </div>
           <div>
             <div>
-              <FaLinkedin className='IconLinkedIn' />
+              <FaLinkedin className='iconLinkedIn' />
               <input 
                 type='text' 
                 name='inputLinkedIn' 
@@ -69,7 +78,7 @@ function Personal ()
               />
             </div>
             <div>
-              <FaGithub className='IconGithub' />
+              <FaGithub className='iconGithub' />
               <input 
                 type='text' 
                 name='inputGithub' 

@@ -1,0 +1,23 @@
+.PreviewContent
+{
+  position: relative;
+  height: 90%;
+  width: 60%;
+  background-color: white;
+  background-image: url(../../images/CV.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color: black;
+  box-shadow: 5px 5px 10px black;
+}
+
+.imgProfile
+{
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  height: 180px;
+  width: 180px;
+  background-color: white;
+}
