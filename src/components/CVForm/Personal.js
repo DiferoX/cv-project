@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../styles/CVForm/Personal.css';
 import { FaUser, FaMapMarkerAlt, FaPhoneAlt, FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail, MdAddAPhoto } from "react-icons/md";
 
 function Personal ()
 {
+  const [data, setData] = useState(
+    {
+      inputFirstName: '',
+      inputLastName: '',
+      inputAddress: '',
+      inputPhoto: '',
+      inputPhoneNumber: '',
+      inputEmail: '',
+      inputLinkedIn: '',
+      inputGithub: ''
+    }
+  );
+
+  const handleInputChange = (e) => 
+  {
+    // console.log (e.target.value);
+    setData({ ...data, [e.target.name] : e.target.value })
+  };
+
   return (
     <div className='personalInformation'>
       <h2>Personal Information</h2>
@@ -17,6 +36,8 @@ function Personal ()
                 name='inputFirstName' 
                 id='inputFirstName' 
                 placeholder='First Name' 
+                onChange={handleInputChange}
+                value={data.inputFirstName}
               />
             </div>
             <div>
@@ -26,6 +47,7 @@ function Personal ()
                 name='inputLastName' 
                 id='inputLastName' 
                 placeholder='Last Name' 
+                onChange={handleInputChange}
               />
             </div>
           </div>
@@ -36,6 +58,7 @@ function Personal ()
               name='inputAddress' 
               id='inputAddress' 
               placeholder='Address' 
+              onChange={handleInputChange}
             />
           </div>
           <div>
@@ -46,6 +69,7 @@ function Personal ()
                 name='inputPhoto' 
                 id='inputPhoto' 
                 placeholder='Photo' 
+                onChange={handleInputChange}
               />
             </div>
             <div>
@@ -55,6 +79,7 @@ function Personal ()
                 name='inputPhoneNumber' 
                 id='inputPhoneNumber' 
                 placeholder='Phone Number' 
+                onChange={handleInputChange}
               />
             </div>
             <div>
@@ -64,6 +89,7 @@ function Personal ()
                 name='inputEmail' 
                 id='inputEmail' 
                 placeholder='Email' 
+                onChange={handleInputChange}
               />
             </div>
           </div>
@@ -75,6 +101,7 @@ function Personal ()
                 name='inputLinkedIn' 
                 id='inputLinkedIn' 
                 placeholder='LinkedIn' 
+                onChange={handleInputChange}
               />
             </div>
             <div>
@@ -84,6 +111,7 @@ function Personal ()
                 name='inputGithub' 
                 id='inputGithub' 
                 placeholder='Github' 
+                onChange={handleInputChange}
               />
             </div>
           </div>
