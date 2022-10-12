@@ -1,0 +1,104 @@
+.taskContent
+{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 0;
+  background-color: rgba(0, 50, 80, 0.5);
+  box-shadow: -5px 0px 10px black;
+}
+
+.newTaskContent
+{
+  height: 10vh;
+  width: 80%;
+  background-color: black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.newTask
+{
+  height: 10vh;
+  width: 100%;
+  background-image: url(../images/avatar.png);
+  /* background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
+  background-color: white;
+  padding: 5px 0;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 50, 80, 1);
+  box-shadow: 5px 5px 10px rgba(0, 220, 255, 0.5),
+  inset -5px -5px 10px black,
+  inset 5px 5px 5px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.newTask h4
+{
+  font-size: 1rem;
+  text-shadow: 2px 2px 2px rgba(85, 85, 85, 0.5);
+}
+
+.newTask h2
+{
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 2px rgba(85, 85, 85, 0.5);
+}
+
+.btnTaskContent
+{
+  display: flex;
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.btnTaskContent.active
+{
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: 0.5s;
+}
+
+.btnTaskContent button
+{
+  height: 100%;
+  width: 50%;
+  border: none;
+  box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.4),
+              inset 2px 2px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.btnTaskContent button:nth-child(1)
+{
+  background-color: rgba(0, 255, 0, 0.8);
+  border-radius: 10px 0 0 10px;
+}
+
+.btnTaskContent button:nth-child(2)
+{
+  background-color: rgba(255, 0, 0, 0.8);
+  border-radius: 0 10px 10px 0;
+}
+
+.deleteTaskBtn, .editTaskBtn
+{
+  color: white;
+  transition: 1s;
+}
+
+.btnTaskContent button:nth-child(2):hover .deleteTaskBtn
+{
+  color: #0ff;
+  transform: rotate(-30deg);
+  transition: 0.5s;
+}

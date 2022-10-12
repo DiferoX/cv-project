@@ -4,8 +4,10 @@ import { FaUser, FaMapMarkerAlt, FaPhoneAlt, FaLinkedin, FaGithub } from "react-
 import { MdEmail } from "react-icons/md";
 
 
-function Preview ()
+function Preview (props)
 {
+  console.log (props.previewCV);
+
   return (
     <div className='previewMainContent'>
       {/* <FaUser className='imgProfile' /> */}
@@ -21,11 +23,12 @@ function Preview ()
       </div>
       <div className='previewContent2'>
         <div className='previewContent2-1'>
-          <h4>COSME</h4>
-          <h2>FULANITO</h2>
+          <h4>{props.previewCV ? props.previewCV.inputFirstName : 'First Name'}</h4>
+          <h2>{props.previewCV ? props.previewCV.inputLastName : 'Last Name'}</h2>
+        </div>
+        <div className='previewContent2-2'>
           <p>Web Developer</p>
         </div>
-        <div className='previewContent2-2'>Content 2-2</div>
       </div>
       <div className='previewContent3'>
         <div className='previewContent3-1'>

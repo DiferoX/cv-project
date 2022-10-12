@@ -3,7 +3,7 @@
   height: 88vh;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 45% 45% 10%;
   justify-items: center;
   align-items: center;
   /* background-color: #576279; */

@@ -3,7 +3,7 @@ import '../../styles/CVForm/Personal.css';
 import { FaUser, FaMapMarkerAlt, FaPhoneAlt, FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail, MdAddAPhoto } from "react-icons/md";
 
-function Personal ()
+function Personal (props)
 {
   const [data, setData] = useState(
     {
@@ -20,14 +20,22 @@ function Personal ()
 
   const handleInputChange = (e) => 
   {
-    // console.log (e.target.value);
     setData({ ...data, [e.target.name] : e.target.value })
+    // props.previewCV(data)
   };
+
+  function onSubmit (e)
+  {
+    e.preventDefault();
+    props.addCV(data);
+    e.target.reset()
+    // console.log(data);
+  }
 
   return (
     <div className='personalInformation'>
       <h2>Personal Information</h2>
-      <form>
+      <form onSubmit={onSubmit}>
           <div>
             <div>
               <FaUser className='iconFirstName' />
@@ -37,7 +45,6 @@ function Personal ()
                 id='inputFirstName' 
                 placeholder='First Name' 
                 onChange={handleInputChange}
-                value={data.inputFirstName}
               />
             </div>
             <div>
@@ -115,6 +122,7 @@ function Personal ()
               />
             </div>
           </div>
+          <button type='submit'>Send</button>
       </form>
     </div>
   );

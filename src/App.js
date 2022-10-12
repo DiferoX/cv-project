@@ -1,24 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Main from './components/Main';
 import Header from './components/Header';
+import { v4 as uuidv4 } from 'uuid';
 
-class App extends React.Component
+
+function App ()
 {
-  constructor()
+  const userData = 
+  [
+    {
+      id: uuidv4(),
+      inputFirstName: 'COSME',
+      inputLastName: 'FULANITO',
+      inputAddress: '',
+      inputPhoto: '',
+      inputPhoneNumber: '',
+      inputEmail: '',
+      inputLinkedIn: '',
+      inputGithub: ''
+    },
+    {
+      id: uuidv4(),
+      inputFirstName: 'PETER',
+      inputLastName: 'PARKER',
+      inputAddress: '',
+      inputPhoto: '',
+      inputPhoneNumber: '',
+      inputEmail: '',
+      inputLinkedIn: '',
+      inputGithub: ''
+    }
+  ]
+
+  const [users, setUsers] = useState(userData);
+
+  // Add CV
+  const addCV = (user) =>
   {
-    super();
+    user.id = uuidv4()
+    setUsers([...users, user])
+    // console.log(user);
   }
-  
-  render()
+
+  // Delete CV
+  const deleteCV = (id) =>
   {
-    return (
-      <div className="App">
-        <Header />
-        <Main />
-      </div>
-    );
+    setUsers(users.filter(user => user.id !== id))
+    // console.log(id);
   }
+
+  return (
+    <div className="App">
+      <Header />
+      <Main users={users} addCV={addCV} deleteCV={deleteCV} />
+    </div>
+  );
 }
 
 export default App;
