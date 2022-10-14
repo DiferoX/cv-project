@@ -11,25 +11,24 @@ function App ()
   [
     {
       id: uuidv4(),
-      inputFirstName: 'COSME',
-      inputLastName: 'FULANITO',
-      inputAddress: '',
-      inputPhoto: '',
-      inputPhoneNumber: '',
-      inputEmail: '',
-      inputLinkedIn: '',
-      inputGithub: ''
+      firstName: 'COSME',
+      lastName: 'FULANITO',
+      address: 'Evergreen Terrace 742, Springfield',
+      photo: '',
+      title: 'Nuclear Safety Inspector',
+      skills: []
     },
     {
       id: uuidv4(),
-      inputFirstName: 'PETER',
-      inputLastName: 'PARKER',
-      inputAddress: '',
-      inputPhoto: '',
-      inputPhoneNumber: '',
-      inputEmail: '',
-      inputLinkedIn: '',
-      inputGithub: ''
+      firstName: 'PETER',
+      lastName: 'PARKER',
+      address: '',
+      photo: '',
+      phoneNumber: '',
+      email: '',
+      linkedIn: '',
+      github: '',
+      skills: []
     }
   ]
 
@@ -39,21 +38,26 @@ function App ()
   const addCV = (user) =>
   {
     user.id = uuidv4()
+    if (!user.skills)
+      user.skills = [];
+    
     setUsers([...users, user])
-    // console.log(user);
   }
 
   // Delete CV
   const deleteCV = (id) =>
   {
     setUsers(users.filter(user => user.id !== id))
-    // console.log(id);
   }
 
   return (
     <div className="App">
       <Header />
-      <Main users={users} addCV={addCV} deleteCV={deleteCV} />
+      <Main 
+        users={users} 
+        addCV={addCV} 
+        deleteCV={deleteCV} 
+      />
     </div>
   );
 }

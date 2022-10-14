@@ -12,7 +12,10 @@ function Main (props)
 
   return (
     <div className='main'>
-      <Form addCV={props.addCV} previewCV={userPreview} />
+      <Form 
+        addCV={props.addCV} 
+        previewCV={userPreview}
+      />
       <Preview previewCV={userPreview} />
       <div className='taskContent'>
         {

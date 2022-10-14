@@ -1,71 +1,54 @@
 import React, { useState } from 'react';
 import '../../styles/CVForm/Personal.css';
-import { FaUser, FaMapMarkerAlt, FaPhoneAlt, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaUser, FaUserGraduate, FaMapMarkerAlt, FaPhoneAlt, FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail, MdAddAPhoto } from "react-icons/md";
 
 function Personal (props)
 {
-  const [data, setData] = useState(
-    {
-      inputFirstName: '',
-      inputLastName: '',
-      inputAddress: '',
-      inputPhoto: '',
-      inputPhoneNumber: '',
-      inputEmail: '',
-      inputLinkedIn: '',
-      inputGithub: ''
-    }
-  );
-
-  const handleInputChange = (e) => 
-  {
-    setData({ ...data, [e.target.name] : e.target.value })
-    // props.previewCV(data)
-  };
-
-  function onSubmit (e)
-  {
-    e.preventDefault();
-    props.addCV(data);
-    e.target.reset()
-    // console.log(data);
-  }
-
   return (
     <div className='personalInformation'>
       <h2>Personal Information</h2>
-      <form onSubmit={onSubmit}>
+      <div>
           <div>
             <div>
               <FaUser className='iconFirstName' />
-              <input 
+              <input required
                 type='text' 
-                name='inputFirstName' 
-                id='inputFirstName' 
+                name='firstName' 
+                id='firstName' 
                 placeholder='First Name' 
-                onChange={handleInputChange}
+                onChange={props.handleChange}
               />
             </div>
             <div>
               <FaUser className='iconFirstName' />
-              <input 
+              <input required
                 type='text' 
-                name='inputLastName' 
-                id='inputLastName' 
+                name='lastName' 
+                id='lastName' 
                 placeholder='Last Name' 
-                onChange={handleInputChange}
+                onChange={props.handleChange}
               />
             </div>
+          </div>
+          <div>
+            <FaUserGraduate className='iconTitle' />
+            <input 
+              type='text' 
+              name='title' 
+              id='title' 
+              placeholder='Title' 
+              onChange={props.handleChange}
+            />
           </div>
           <div>
             <FaMapMarkerAlt className='iconAddress' />
             <input 
               type='text' 
-              name='inputAddress' 
-              id='inputAddress' 
+              name='address' 
+              id='address' 
               placeholder='Address' 
-              onChange={handleInputChange}
+              onChange={props.handleChange}
             />
           </div>
           <div>
@@ -73,30 +56,30 @@ function Personal (props)
               <MdAddAPhoto className='iconPhoto' />
               <input
                 type='file' 
-                name='inputPhoto' 
-                id='inputPhoto' 
+                name='photo' 
+                id='photo' 
                 placeholder='Photo' 
-                onChange={handleInputChange}
+                onChange={props.handleChange}
               />
             </div>
             <div>
               <FaPhoneAlt className='iconPhoneNumber' />
               <input 
                 type='text' 
-                name='inputPhoneNumber' 
-                id='inputPhoneNumber' 
+                name='phoneNumber' 
+                id='phoneNumber' 
                 placeholder='Phone Number' 
-                onChange={handleInputChange}
+                onChange={props.handleChange}
               />
             </div>
             <div>
               <MdEmail className='iconEmail' />
               <input 
                 type='email' 
-                name='inputEmail' 
-                id='inputEmail' 
+                name='email' 
+                id='email' 
                 placeholder='Email' 
-                onChange={handleInputChange}
+                onChange={props.handleChange}
               />
             </div>
           </div>
@@ -105,25 +88,24 @@ function Personal (props)
               <FaLinkedin className='iconLinkedIn' />
               <input 
                 type='text' 
-                name='inputLinkedIn' 
-                id='inputLinkedIn' 
+                name='linkedIn' 
+                id='linkedIn' 
                 placeholder='LinkedIn' 
-                onChange={handleInputChange}
+                onChange={props.handleChange}
               />
             </div>
             <div>
               <FaGithub className='iconGithub' />
               <input 
                 type='text' 
-                name='inputGithub' 
-                id='inputGithub' 
+                name='github' 
+                id='github' 
                 placeholder='Github' 
-                onChange={handleInputChange}
+                onChange={props.handleChange}
               />
             </div>
           </div>
-          <button type='submit'>Send</button>
-      </form>
+      </div>
     </div>
   );
 }

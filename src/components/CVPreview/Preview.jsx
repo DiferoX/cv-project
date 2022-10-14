@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 
 function Preview (props)
 {
-  console.log (props.previewCV);
+  // console.log (props.previewCV);
 
   return (
     <div className='previewMainContent'>
@@ -23,11 +23,11 @@ function Preview (props)
       </div>
       <div className='previewContent2'>
         <div className='previewContent2-1'>
-          <h4>{props.previewCV ? props.previewCV.inputFirstName : 'First Name'}</h4>
-          <h2>{props.previewCV ? props.previewCV.inputLastName : 'Last Name'}</h2>
+          <h4>{props.previewCV ? props.previewCV.firstName : 'First Name'}</h4>
+          <h2>{props.previewCV ? props.previewCV.lastName : 'Last Name'}</h2>
         </div>
         <div className='previewContent2-2'>
-          <p>Web Developer</p>
+          <p>{props.previewCV ? props.previewCV.title : 'Title'}</p>
         </div>
       </div>
       <div className='previewContent3'>
@@ -41,7 +41,7 @@ function Preview (props)
               </div>
               <div>
                 <FaMapMarkerAlt className='iconAddress' />
-                <p>Evergreen Terrace 742, Springfield</p>
+                <p>{props.previewCV ? props.previewCV.address : 'Dummy Street 123'}</p>
               </div>
               <div>
                 <MdEmail className='iconEmail' />
@@ -60,12 +60,14 @@ function Preview (props)
           <div className='previewContent3-1-2'>
             <h4>SKILLS</h4>
             <ul>
-              <li>Skill 1</li>
-              <li>Skill 2</li>
-              <li>Skill 3</li>
-              <li>Skill 4</li>
-              <li>Skill 5</li>
-              <li>Skill 6</li>
+              {
+                props.previewCV
+                ? props.previewCV.skills.map((skill) => 
+                  <li key={skill.id}>
+                    {skill.text}
+                  </li> 
+                ) : 'Skill'
+              }
             </ul>
           </div>
         </div>

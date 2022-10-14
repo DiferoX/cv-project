@@ -23,8 +23,8 @@ function Task (props)
   return (
     <div className='newTaskContent'>
       <div className='newTask' onClick={() => props.previewCV(props.user)} >
-        <h4>{props.user.inputFirstName}</h4>
-        <h2>{props.user.inputLastName}</h2>
+        <h4>{props.user.firstName}</h4>
+        <h2>{props.user.lastName}</h2>
       </div>
       <div className='btnTaskContent'>
         <button onClick={() => {props.deleteCV(props.user.id)}}>
