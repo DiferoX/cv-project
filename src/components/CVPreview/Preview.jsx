@@ -10,29 +10,33 @@ function Preview (props)
 
   return (
     <div className='previewMainContent'>
-      {/* <FaUser className='imgProfile' /> */}
-      <div className='previewContent1'>
-        <div className='previewContent1-1'>
-          {/* <FaUser className='imgProfile' /> */}
-          <div className='avatar'></div>
+      <div className='previewHeadContent'>
+        <div className='previewAvatarContent'>
+          <div className='avatar'>
+            {
+              props.previewCV && (props.previewCV.photo !== undefined && props.previewCV.photo !== '')
+              ? <img src={require(`../../images/${props.previewCV.photo}`)} /> 
+              : <img src={require(`../../images/avatar.png`)} />
+            }
+          </div>
         </div>
-        <div className='previewContent1-2'>
+        <div className='previewAboutContent'>
           <h3>ABOUT ME</h3>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab perferendis odit harum! In eos libero cupiditate necessitatibus earum quo sequi ea ipsam veritatis corrupti! Similique eligendi at porro aliquam totam!</p>
         </div>
       </div>
-      <div className='previewContent2'>
-        <div className='previewContent2-1'>
+      <div className='previewMiddlebarContent'>
+        <div className='previewNameUserContent'>
           <h4>{props.previewCV ? props.previewCV.firstName : 'First Name'}</h4>
           <h2>{props.previewCV ? props.previewCV.lastName : 'Last Name'}</h2>
         </div>
-        <div className='previewContent2-2'>
+        <div className='previewTitleUserContent'>
           <p>{props.previewCV ? props.previewCV.title : 'Title'}</p>
         </div>
       </div>
-      <div className='previewContent3'>
-        <div className='previewContent3-1'>
-          <div className='previewContent3-1-1'>
+      <div className='previewBottomContent'>
+        <div className='previewSidebarContent'>
+          <div className='previewContactsContent'>
             <h4>CONTACTS</h4>
             <div>
               <div>
@@ -57,7 +61,7 @@ function Preview (props)
               </div>
             </div>
           </div>
-          <div className='previewContent3-1-2'>
+          <div className='previewSkillsContent'>
             <h4>SKILLS</h4>
             <ul>
               {
@@ -71,7 +75,46 @@ function Preview (props)
             </ul>
           </div>
         </div>
-        <div className='previewContent4'>Content 4</div>
+        <div className='previewEduExpContent'>
+          <div className='previewEducationContent'>
+            <h5>EDUCATION</h5>
+              {
+                props.previewCV
+                ? props.previewCV.education.map((education) => 
+                  <div key={education.id}>
+                    <div className='previewEducationDate'>
+                      <p><strong>{education.startDate}</strong></p>
+                      <p><strong>{education.endDate}</strong></p>
+                    </div> 
+                    <div className='previewEducationInfo'>
+                      <p><strong>School: </strong> {education.school}</p>
+                      <p><strong>City: </strong> {education.city}</p>
+                      <p><strong>Degree: </strong> {education.degree}</p>
+                    </div>
+                  </div>
+                ) : ''
+              }
+          </div>
+          <div className='previewExperienceContent'>
+            <h5>EXPERIENCE</h5>
+              {
+                props.previewCV
+                ? props.previewCV.experience.map((experience) => 
+                  <div key={experience.id}>
+                    <div className='previewExperienceDate'>
+                      <p><strong>{experience.startDate}</strong></p>
+                      <p><strong>{experience.endDate}</strong></p>
+                    </div> 
+                    <div className='previewExperienceInfo'>
+                      <p><strong>Company: </strong> {experience.company}</p>
+                      <p><strong>City: </strong> {experience.city}</p>
+                      <p><strong>Position: </strong> {experience.position}</p>
+                    </div>
+                  </div>
+                ) : ''
+              }
+          </div>
+        </div>
       </div>
     </div>
   );

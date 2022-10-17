@@ -1,0 +1,39 @@
+.educationContent
+{
+  width: 100%;
+  /* min-height: 1vh; */
+  display: grid;
+  grid-template-columns: 90% 10%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 2px solid white;
+  cursor: pointer;
+}
+
+.educationContent:hover
+{
+  background-color: rgba(0, 49, 80, 0.5);
+}
+
+.educationText
+{
+  width: 100%;
+  /* height: 100%; */
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  overflow-wrap: anywhere;
+  padding-left: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.educationIconContent
+{
+  height: 15px;
+  width: 15px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+}

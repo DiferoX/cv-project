@@ -1,0 +1,36 @@
+.educationInformation
+{
+  height: 43.5%;
+  width: 90%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-items: center;
+  border-bottom: 2px solid #111;
+  /* border: 2px solid black; */
+}
+
+.educationInformation div
+{
+  /* height: 100%; */
+  width: 100%;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-content: center; */
+  /* flex-direction: column; */
+}
+
+.educationListContent
+{
+  height: 8rem;
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  background-color: rgba(0, 49, 80, 0.5);
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: 1px solid white;
+  overflow-y: auto;
+  flex-direction: column;
+}

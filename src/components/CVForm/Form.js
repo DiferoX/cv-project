@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../../styles/CVForm/Form.css';
 import Personal from './Personal';
 import ListSkills from './Skills/ListSkills';
+import ListEducation from './Education/ListEducation';
+import ListExperience from './Experience/ListExperience';
 
 function Form (props)
 {
@@ -26,6 +28,16 @@ function Form (props)
   const handleSkillsChange = (newSkill) => 
   {
     setData({ ...data, skills : newSkill })
+  };
+
+  const handleEducationChange = (newEducation) => 
+  {
+    setData({ ...data, education : newEducation })
+  };
+
+  const handleExperienceChange = (newExperience) => 
+  {
+    setData({ ...data, experience : newExperience })
   };
 
   const [checkbox, setCheckbox] = useState(true);
@@ -63,8 +75,8 @@ function Form (props)
           <ListSkills handleSkillsChange={handleSkillsChange} />
         </div>
         <div className='displayFormContent'>
-          {/* <ListSkills handleSkillsChange={handleSkillsChange} />
-          <Personal handleChange={handleChange} /> */}
+          <ListEducation handleEducationChange={handleEducationChange} />
+          <ListExperience handleExperienceChange={handleExperienceChange} />
           <div className='submitBtnContent'>
             <button type='submit' className='submitBtn'>Send</button>
           </div>

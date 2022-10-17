@@ -1,38 +1,49 @@
-.skillsForm
+.educationForm
 {
-  width: 50%;
+  width: 90%;
   padding: 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   justify-items: center;
+  /* border: 2px solid black; */
+  /* border-radius: 25px; */
 }
 
-.skillsForm div
+.educationForm div
 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  margin: 5px 0;
+  margin: 2px 0;
 }
 
-.skillsForm div input
+.educationForm div div
+{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.educationForm input
 {
   height: 1.5rem;
-  width: 100%;
+  /* width: 100%; */
   margin: 0;
+  margin-left: 5px;
+  margin-right: 10px;
   padding-left: 5px;
   border-radius: 5px;
-  text-transform: capitalize;
 }
 
-.skillBtn
+.educationBtn
 {
   height: 1.5rem;
   width: 100%;
   background-color: rgba(0, 255, 0, 0.5);
-  margin-top: 10px;
+  margin-top: 5px;
   border: none;
   border-radius: 5px;
   box-shadow: 2px 2px 2px black,
@@ -42,7 +53,7 @@
   transition: 0.5s;
 }
 
-.skillBtn:hover
+.educationBtn:hover
 {
   background-color: rgba(0, 255, 0, 0.8);
   box-shadow: 5px 5px 5px black,

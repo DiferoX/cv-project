@@ -52,7 +52,7 @@ function Personal (props)
             />
           </div>
           <div>
-            <div>
+            {/* <div>
               <MdAddAPhoto className='iconPhoto' />
               <input
                 type='file' 
@@ -61,7 +61,7 @@ function Personal (props)
                 placeholder='Photo' 
                 onChange={props.handleChange}
               />
-            </div>
+            </div> */}
             <div>
               <FaPhoneAlt className='iconPhoneNumber' />
               <input 
@@ -104,6 +104,14 @@ function Personal (props)
                 onChange={props.handleChange}
               />
             </div>
+          </div>
+          <div>
+            <textarea
+              name='textarea' 
+              id='textarea' 
+              placeholder='About Me' 
+              onChange={props.handleChange}
+            />
           </div>
       </div>
     </div>
