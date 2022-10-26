@@ -45,60 +45,60 @@ function App ()
         }
       ],
     },
-    // {
-    //   id: uuidv4(),
-    //   firstName: 'DIEGO',
-    //   lastName: 'RUIZ',
-    //   address: '',
-    //   photo: 'StanEmo.jpg',
-    //   phoneNumber: '',
-    //   email: 'diferox@gmail.com',
-    //   linkedIn: '',
-    //   github: 'github.com/DiferoX',
-    //   skills: [
-    //     { id: uuidv4(), text: 'Javascript' },
-    //     { id: uuidv4(), text: 'Node.js' },
-    //     { id: uuidv4(), text: 'React' },
-    //     { id: uuidv4(), text: 'HTML' },
-    //     { id: uuidv4(), text: 'CSS' },
-    //   ],
-    //   education: [
-    //     {
-    //       id: uuidv4(),
-    //       school: 'The Odin Project',
-    //       city: 'Medellin, CO',
-    //       degree: 'Web Developer',
-    //       startDate: '05/2022',
-    //       endDate: '11/2022',
-    //     },
-    //     {
-    //       id: uuidv4(),
-    //       school: 'Cool University',
-    //       city: 'Medellin, CO',
-    //       degree: 'Software Developer',
-    //       startDate: '01/2010',
-    //       endDate: '01/2015',
-    //     }
-    //   ],
-    //   experience: [
-    //     {
-    //       id: uuidv4(),
-    //       company: 'Super Cool Web Company',
-    //       city: 'Medellin, Co',
-    //       position: 'Senior Web Developer',
-    //       startDate: '01/2020',
-    //       endDate: 'Present',
-    //     },
-    //     {
-    //       id: uuidv4(),
-    //       company: 'Another Web Company',
-    //       city: 'Medellin, CO',
-    //       position: 'Junior Web Developer',
-    //       startDate: '11/2015',
-    //       endDate: '01/2020',
-    //     }
-    //   ],
-    // }
+    {
+      id: uuidv4(),
+      firstName: 'DIEGO',
+      lastName: 'RUIZ',
+      address: '',
+      photo: 'StanEmo.jpg',
+      phoneNumber: '',
+      email: 'diferox@gmail.com',
+      linkedIn: '',
+      github: 'github.com/DiferoX',
+      skills: [
+        { id: uuidv4(), text: 'Javascript' },
+        { id: uuidv4(), text: 'Node.js' },
+        { id: uuidv4(), text: 'React' },
+        { id: uuidv4(), text: 'HTML' },
+        { id: uuidv4(), text: 'CSS' },
+      ],
+      education: [
+        {
+          id: uuidv4(),
+          school: 'The Odin Project',
+          city: 'Medellin, CO',
+          degree: 'Web Developer',
+          startDate: '05/2022',
+          endDate: '11/2022',
+        },
+        {
+          id: uuidv4(),
+          school: 'Cool University',
+          city: 'Medellin, CO',
+          degree: 'Software Developer',
+          startDate: '01/2010',
+          endDate: '01/2015',
+        }
+      ],
+      experience: [
+        {
+          id: uuidv4(),
+          company: 'Super Cool Web Company',
+          city: 'Medellin, Co',
+          position: 'Senior Web Developer',
+          startDate: '01/2020',
+          endDate: 'Present',
+        },
+        {
+          id: uuidv4(),
+          company: 'Another Web Company',
+          city: 'Medellin, CO',
+          position: 'Junior Web Developer',
+          startDate: '11/2015',
+          endDate: '01/2020',
+        }
+      ],
+    }
   ]
 
   const [users, setUsers] = useState(userData);
@@ -106,7 +106,9 @@ function App ()
   // Add CV
   const addCV = (user) =>
   {
-    user.id = uuidv4()
+    // if (user.id === undefined)
+      user.id = uuidv4()
+
     if (!user.skills)
       user.skills = [];
     if (!user.education)
@@ -115,6 +117,8 @@ function App ()
       user.experience = [];
     
     setUsers([...users, user])
+    
+    // console.log(user);
   }
 
   // Delete CV

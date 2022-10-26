@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../../../styles/CVForm/Education/FormEducation.css';
 import { FaUniversity, FaCity, FaUserGraduate, FaCalendarCheck } from "react-icons/fa";
-// import { IoCalendarNumberSharp } from "react-icons/io";
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -13,6 +12,12 @@ function FormEducation (props)
   {
     setData({ ...data, [e.target.name] : e.target.value })
   };
+
+  const cleanInput = () =>
+  {
+    let inputs = document.querySelectorAll('.educationForm input');
+    inputs.forEach (input => (input.value = ''));
+  }
 
   const onSend = (e) =>
   {
@@ -27,10 +32,7 @@ function FormEducation (props)
       endDate: data.endDate,
     };
     props.addEducation(newEducation);
-    // e.target.reset();
-    // document.getElementById('education').value = "";
-    // document.querySelectorAll('.educationForm div div input').values = "";
-    // console.log(newEducation);
+    cleanInput();
   };
   
   return (

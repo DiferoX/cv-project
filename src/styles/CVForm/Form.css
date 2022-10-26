@@ -11,6 +11,13 @@
   box-shadow: 5px 5px 10px black,
   inset -5px -5px 10px black,
   inset 5px 5px 5px rgba(0, 0, 0, 0.4);
+  /* clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); */
+}
+
+.formMainContent p
+{
+  display: block;
+  font-size: 10px;
 }
 
 .formContent

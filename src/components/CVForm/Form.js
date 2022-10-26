@@ -64,14 +64,15 @@ function Form (props)
     props.addCV(data);
     e.target.reset();
 
-    console.log(data);
+    // console.log(data);
   }
 
   return (
     <div className='formMainContent'>
+      {/* <p>{props.user.id}</p> */}
       <form onSubmit={onSubmit} className='formContent'>
         <div className='displayFormContent active'>
-          <Personal handleChange={handleChange} />
+          <Personal handleChange={handleChange} previewCV={props.previewCV} />
           <ListSkills handleSkillsChange={handleSkillsChange} />
         </div>
         <div className='displayFormContent'>
@@ -85,7 +86,6 @@ function Form (props)
           <input type='radio' name='inputRadio' id='radio1' onChange={handleCheckboxChange} />
           <input type='radio' name='inputRadio' id='radio2' onChange={handleCheckboxChange} />
         </div>
-        
       </form>
     </div>
   );

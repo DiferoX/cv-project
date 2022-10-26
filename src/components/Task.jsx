@@ -1,28 +1,25 @@
-import React from 'react';
+import React, { Children } from 'react';
 import '../styles/Task.css';
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 function Task (props)
 {
-  function onClickTask ()
+  function onClickTask ({ id })
   {
-    // function activeBtn ()
-    // {
-    //   let displayBtn = document.querySelectorAll ('.btnTaskContent');
+    let allTasks = document.querySelectorAll ('.btnTaskContent');
 
-    //   displayBtn.forEach ((item) =>
-    //   item.classList.remove('active'));
-    //   this.classList.add('active');
-    // }
-    // let newTask = document.querySelectorAll ('.newTask');
-    // newTask.forEach ((item) => item.addEventListener ('click', activeBtn));
+    allTasks.forEach ((item) => 
+    {
+      item.classList.remove('active');
+      if (item.childNodes[2].textContent === id)
+        item.classList.add('active');
+    });
   }
 
-  // console.log(props);
   return (
     <div className='newTaskContent'>
-      <div className='newTask' onClick={() => props.previewCV(props.user)} >
+      <div className='newTask' onClick={() => {props.previewCV(props.user); onClickTask(props.user)} } >
         <h4>{props.user.firstName}</h4>
         <h2>{props.user.lastName}</h2>
       </div>
@@ -33,6 +30,7 @@ function Task (props)
         <button onClick={() => {props.deleteCV(props.user.id)}}>
           <RiDeleteBin6Line className='deleteTaskBtn' />
         </button>
+        <p>{props.user.id}</p>
       </div>
     </div>
   );

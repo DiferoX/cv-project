@@ -16,6 +16,18 @@ function Main (props)
         addCV={props.addCV} 
         previewCV={userPreview}
       />
+
+      {/* {
+        props.users.map(user => 
+        (
+          <Form 
+            key={user.id}
+            user={user}
+            addCV={props.addCV} 
+            previewCV={userPreview}
+          />
+        ))
+      } */}
       <Preview previewCV={userPreview} />
       <div className='taskContent'>
         {

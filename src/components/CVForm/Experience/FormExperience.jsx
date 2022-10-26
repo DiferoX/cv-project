@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../../styles/CVForm/Experience/FormExperience.css';
-import { FaUniversity, FaCity, FaUserGraduate, FaCalendarCheck } from "react-icons/fa";
+import { FaCity, FaCalendarCheck } from "react-icons/fa";
 import { ImUserTie } from "react-icons/im";
 import { IoIosBusiness } from "react-icons/io";
 import { v4 as uuidv4 } from 'uuid';
@@ -15,6 +15,12 @@ function FormExperience (props)
     setData({ ...data, [e.target.name] : e.target.value })
   };
 
+  const cleanInput = () =>
+  {
+    let inputs = document.querySelectorAll('.experienceForm input');
+    inputs.forEach (input => (input.value = ''));
+  }
+
   const onSendExperience = (e) =>
   {
     e.preventDefault();
@@ -28,10 +34,7 @@ function FormExperience (props)
       endDate: data.endDate,
     };
     props.addExperience(newExperience);
-    // e.target.reset();
-    // document.getElementById('experience').value = "";
-    // document.querySelectorAll('.experienceForm div div input').values = "";
-    // console.log(newExperience);
+    cleanInput();
   };
   
   return (

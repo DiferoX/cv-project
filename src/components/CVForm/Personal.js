@@ -12,7 +12,7 @@ function Personal (props)
           <div>
             <div>
               <FaUser className='iconFirstName' />
-              <input required
+              <input
                 type='text' 
                 name='firstName' 
                 id='firstName' 
@@ -22,7 +22,7 @@ function Personal (props)
             </div>
             <div>
               <FaUser className='iconFirstName' />
-              <input required
+              <input
                 type='text' 
                 name='lastName' 
                 id='lastName' 
