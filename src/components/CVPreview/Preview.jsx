@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/CVPreview/Preview.css';
-import { FaUser, FaMapMarkerAlt, FaPhoneAlt, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaInternetExplorer, FaMapMarkerAlt, FaPhoneAlt, FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 
@@ -22,7 +22,10 @@ function Preview (props)
         </div>
         <div className='previewAboutContent'>
           <h3>ABOUT ME</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab perferendis odit harum! In eos libero cupiditate necessitatibus earum quo sequi ea ipsam veritatis corrupti! Similique eligendi at porro aliquam totam!</p>
+          <p>{props.previewCV && (props.previewCV.about !== undefined && props.previewCV.about !== '') 
+            ? props.previewCV.about 
+            : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab perferendis odit harum! In eos libero cupiditate necessitatibus earum quo sequi ea ipsam veritatis corrupti! Similique eligendi at porro aliquam totam!'}
+          </p>
         </div>
       </div>
       <div className='previewMiddlebarContent'>
@@ -41,23 +44,45 @@ function Preview (props)
             <div>
               <div>
                 <FaPhoneAlt className='iconPhoneNumber' />
-                <p>+12 345 6789</p>
+                <p>{props.previewCV && (props.previewCV.phoneNumber !== undefined && props.previewCV.phoneNumber !== '') 
+                  ? props.previewCV.phoneNumber 
+                  : '+12 345 6789'}
+                </p>
               </div>
               <div>
                 <FaMapMarkerAlt className='iconAddress' />
-                <p>{props.previewCV ? props.previewCV.address : 'Dummy Street 123'}</p>
+                <p>{props.previewCV && (props.previewCV.address !== undefined && props.previewCV.address !== '') 
+                  ? props.previewCV.address 
+                  : 'Dummy Street 123'}
+                </p>
               </div>
               <div>
                 <MdEmail className='iconEmail' />
-                <p>info@info.com</p>
+                <p>{props.previewCV && (props.previewCV.email !== undefined && props.previewCV.email !== '') 
+                  ? props.previewCV.email 
+                  : 'info@info.com'}
+                </p>
               </div>
               <div>
                 <FaLinkedin className='iconLinkedIn' />
-                <p>CosmeFulanito</p>
+                <p>{props.previewCV && (props.previewCV.linkedIn !== undefined && props.previewCV.linkedIn !== '') 
+                  ? props.previewCV.linkedIn 
+                  : ''}
+                </p>
               </div>
               <div>
                 <FaGithub className='iconGithub' />
-                <p>github.com/Fulanito</p>
+                <p>{props.previewCV && (props.previewCV.github !== undefined && props.previewCV.github !== '') 
+                  ? props.previewCV.github 
+                  : ''}
+                </p>
+              </div>
+              <div>
+                <FaInternetExplorer className='iconURL' />
+                <p>{props.previewCV && (props.previewCV.url !== undefined && props.previewCV.url !== '') 
+                  ? props.previewCV.url 
+                  : ''}
+                </p>
               </div>
             </div>
           </div>

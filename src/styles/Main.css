@@ -8,4 +8,32 @@
   align-items: center;
   /* background-color: #576279; */
   text-align: center;
+  transition: 1s;
+}
+
+@media (max-width: 1700px)
+{
+  .main
+  {
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 100vh 100vh;
+  }
+}
+
+@media (max-width: 1000px)
+{
+  .main
+  {
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 80vh 80vh;
+  }
+}
+
+@media (max-width: 790px)
+{
+  .main
+  {
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 50vh 50vh;
+  }
 }

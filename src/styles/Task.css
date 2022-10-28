@@ -108,3 +108,28 @@
   transform: rotate(-30deg);
   transition: 0.5s;
 }
+
+@media (max-width: 1700px)
+{
+  .taskContent
+  {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
+}
+
+@media (max-width: 790px)
+{
+  .newTask h4
+  {
+    font-size: 0rem;
+    transform: rotate(90deg);
+  }
+
+  .newTask h2
+  {
+    font-size: 1rem;
+    transform: rotate(90deg);
+    margin-top: 20px;
+  }
+}
